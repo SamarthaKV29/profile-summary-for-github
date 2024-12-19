@@ -24,7 +24,7 @@ fun main() {
         it.jetty.server {
             Server(QueuedThreadPool(200, 8, 120000)).apply {
                 connectors = arrayOf(ServerConnector(server).apply {
-                    port = Config.getPort() ?: 7070
+                    port = Config.getPort() ?: 45668
                     idleTimeout = 120_000
                     connectionFactories.filterIsInstance<HttpConnectionFactory>().forEach {
                         it.httpConfiguration.sendServerVersion = false
